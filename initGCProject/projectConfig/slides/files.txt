@@ -1,0 +1,7 @@
+makefile
+aluf_sample.nav
+aluf_sample.snm
+aluf_sample.synctex.gz
+aluf_sample.tex
+beamerthemeALUF.sty
+unilogo.png

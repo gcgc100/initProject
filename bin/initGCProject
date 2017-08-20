@@ -1,0 +1,4 @@
+#!/usr/bin/env python
+
+import initGCProject.initGCProject as initGCProject
+initGCProject.main()

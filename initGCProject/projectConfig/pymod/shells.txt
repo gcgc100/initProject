@@ -1,0 +1,2 @@
+mkdir module
+initGCProject -t python -p ./module --nogit

@@ -1,0 +1,2 @@
+sub: {"projectName": "{projectName}", "config": "module"}
+gitignore: ["Python"]

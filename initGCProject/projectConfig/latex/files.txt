@@ -1,0 +1,3 @@
+makefile
+main.tex
+main.bib
