@@ -89,4 +89,4 @@ class gitProject(Project):
         """Add files for git. gitignore add
         """
         super(gitProject, self).addFiles()
-        self.addGitIgnore()
+        # self.addGitIgnore()
