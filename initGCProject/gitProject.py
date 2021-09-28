@@ -4,7 +4,7 @@
 import os
 from sys import platform
 
-from Project import Project
+from .Project import Project
 
 
 class gitProject(Project):

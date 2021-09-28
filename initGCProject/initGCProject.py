@@ -6,8 +6,8 @@ import sys
 import argparse
 import shutil
 
-from Project import Project
-from Project import DirException
+from .Project import Project
+from .Project import DirException
 from gClifford.mylogging import logger
 
 
@@ -28,7 +28,7 @@ def checkPath(path):
     if len(os.listdir(root)) == 0:
         return True
     else:
-        print "Warning: project directory({0}) not empty.".format(root)
+        print("Warning: project directory({0}) not empty.".format(root))
         return False
 
 
@@ -45,7 +45,7 @@ def initProject(path, type):
         project.initProject()
     except DirException as e:
         logger.error(e)
-        print "Project config folder not found"
+        print("Project config folder not found")
         return False
     return True
 
@@ -58,7 +58,7 @@ def files(type):
     def printTree(tree):
         for root, dirs, files in os.walk(tree):
             for f in files:
-                print "{0}/{1}".format(root, f)
+                print("{0}/{1}".format(root, f))
     p = Project(".", type)
     printTree(p.files)
     printTree(p.globalConf)
@@ -79,12 +79,12 @@ def addFile(path):
     if filePath.endswith("gitignore"):
         filePath = Project.gitignorePath(filePath)
         if filePath is None:
-            print "Can not found gitignore file"
+            print("Can not found gitignore file")
             return
         with open(filePath, "r") as f:
             text = f.read()
         with open(".gitignore", "a") as f:
-            print "Append gitignore"
+            print("Append gitignore")
             f.write(text)
         return
     if not os.path.exists(filePath):
@@ -92,10 +92,10 @@ def addFile(path):
         return
     if not os.path.exists(os.path.basename(filePath)):
         shutil.copy(filePath, os.path.basename(filePath))
-        print "Add file:{0}".format(filePath)
+        print("Add file:{0}".format(filePath))
         return True
     else:
-        print "error: file already exists"
+        print("error: file already exists")
         return False
 
 
@@ -136,7 +136,7 @@ def main():
     try:
         args = parser.parse_args()
     except Exception as e:
-        print e
+        print(e)
         sys.exit()
 
     if args.add:
@@ -154,7 +154,7 @@ def main():
         files(args.files)
 
     if args.gitignores:
-        print Project.listGitignores()
+        print(Project.listGitignores())
 
 if __name__ == "__main__":
     main()

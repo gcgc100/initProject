@@ -30,7 +30,7 @@ class Project(object):
         :sub: whether is subproject(unused)
 
         """
-        from gitProject import gitProject
+        from .gitProject import gitProject
         if type == "git":
             return gitProject(path, projectConfig, sub)
         else:
